@@ -1,0 +1,32 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[[source]]
+url = "https://test.pypi.org/pypi/"
+verify_ssl = true
+name = "test"
+
+[dev-packages]
+pytest = "==6.2.4"
+pylint = "==2.8.2"
+autopep8 = "==1.5.7"
+setuptools = "*"
+requests-mock = "==1.9.2"
+pipenv-setup = "==3.1.1"
+pexpect = "==4.8.0"
+notebook = "*"
+
+[packages]
+requests = "==2.25.1"
+twine = "==3.4.1"
+rich = "==13.5.2"
+click = "==8.0.1"
+boto3 = "==1.17.82"
+semver = "==2.13.0"
+importlib-metadata = "==4.11.4"
+natsort = "==7.1.1"
+
+[requires]
+python_version = "3.8"
