@@ -1,4 +1,4 @@
-SDK_NAME='spb-cli'
+SDK_NAME='spb-sdk'
 SDK_AUTHOR='Superb AI Dev Team'
 SDK_VERSION='0.18.5'
 SDK_AUTHOR_EMAIL='support@superb-ai.com'
