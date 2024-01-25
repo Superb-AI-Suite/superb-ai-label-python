@@ -1,0 +1,2 @@
+[console_scripts]
+spb = spb.__main__:cli
