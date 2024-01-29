@@ -2,7 +2,7 @@
   <a href="http://suite-api.superb-ai.com/" target="blank"><img src="logo/cool-tree.png" width="200" height="200" alt="Cool-Tree Logo" /></a>
 </p> -->
 
-# Superb AI Suite Command Line Tool
+# Superb AI Suite Software Development Kit
 
 ![Build](https://github.com/Superb-AI-Suite/spb-cli/workflows/Build/badge.svg)
 ![Version](https://img.shields.io/pypi/v/spb-cli)
@@ -10,7 +10,7 @@
 <!--![Unit Test](https://github.com/Superb-AI-Suite/cool-tree/workflows/Unit%20Test/badge.svg)-->
 
 
-Official Superb AI Suite Command Line Interface for managing data and labels on [Superb AI Suite](https://suite.superb-ai.com).
+Official Superb AI Suite Software Development Kit for managing data and labels on [Superb AI Suite](https://suite.superb-ai.com).
 
 - [Installation](#Installation)
 - [Authentication](#Authentication)
@@ -28,40 +28,27 @@ $ pip install spb-sdk
 
 0.0.xx
 ``` 
-Once installed, you can type `spb` command in the terminal to access the command line interface.
-
-<!---
-<img src="./install-spb-cli.gif" width="600">
--->
 
 ## Authentication
 
-<img src="./assets/configure-cli.gif" width="800">
-
 You need an *Access Key* for authentication. The *Access Key* can be generated on the :tada: [Superb AI Suite web](https://suite.superb-ai.com/) (Suite > My Account > Advanced).
 
-You can then configure your profile by entering your *Suite Team Name* and the generated *Access Key*. 
+You can then configure your profile by entering your *Suite Team Name* and the generated *Access Key* to under configuration file.
 
 :rotating_light: ***Suite Team Name* refers to the organization name that your personal account belongs to:**
 
 <img src="./assets/account-name.png" width="400">
 
 ```shell
-$ spb configure
-Suite Team Name: foo
-Access Key: bar
+$ cat <<EOF >> ~/.spb/config
+[default]
+team_name = YOUR TEAM NAME
+access_key = GENERATED TEAM ACCESS KEY
+EOF
 ```
 
 Once configured, you can check the currently configured profile by using the `--list` option.
 
-
-```
-$ spb configure --list
-
-[default]
-access_key = foo
-team_name = bar
-```
 
 ## Resource Description
 
