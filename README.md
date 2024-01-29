@@ -70,7 +70,26 @@ count, tags = client.get_project_tags()
 ```
 ### Labels
 ```python
+from spb import sdk
+from spb.utils import SearchFilter
 
+client = sdk.Client()
+client.set_project(name="YOUR PROJECT NAME")
+
+# Get labels
+filter = SearchFilter(project=client.project)
+
+# Status filter
+filter.status_is_any_one_of = ["WORKING", "SKIPPED"]
+# Assignee filter
+filter.assignee_is_any_one_of = ["ASSIGNEE EMAIL"]
+# Tag filter
+filter.tag_name_all = ["TAG NAME"]
+
+count, labels, next = client.get_labels(
+  filter=filter,
+  cursor=next
+)
 ```
 
 ## Contributing
