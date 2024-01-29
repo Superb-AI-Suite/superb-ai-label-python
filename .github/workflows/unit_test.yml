@@ -21,13 +21,9 @@ jobs:
     - name: install packages
       run: |
         pip3 install pytest
-    - name: SPB-CLI Install
+    - name: SPB-SDK Install
       run: |
         python setup.py install
-    - name: Version Check
-      run: |
-        python -m spb --version
-        python -m spb describe projects
     - name: Unit test with pytest
       env:
         SPB_ACCESS_KEY: ${{ secrets.SPB_ACCESS_KEY }}
@@ -47,13 +43,9 @@ jobs:
     - name: install packages
       run: |
         pip3 install pytest
-    - name: SPB-CLI Install
+    - name: SPB-SDK Install
       run: |
         python setup.py install
-    - name: Version Check
-      run: |
-        python -m spb --version
-        python -m spb describe projects
     - name: Unit test with pytest
       env:
         SPB_ACCESS_KEY: ${{ secrets.SPB_ACCESS_KEY }}
@@ -73,13 +65,9 @@ jobs:
     - name: install packages
       run: |
         pip3 install pytest
-    - name: SPB-CLI Install
+    - name: SPB-SDK Install
       run: |
         python setup.py install
-    - name: Version Check
-      run: |
-        python -m spb --version
-        python -m spb describe projects
     - name: Unit test with pytest
       env:
         SPB_ACCESS_KEY: ${{ secrets.SPB_ACCESS_KEY }}
