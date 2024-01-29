@@ -16,8 +16,7 @@ Official Superb AI Suite Software Development Kit for managing data and labels o
 - [Authentication](#Authentication)
 - [Resource Description](#Resource-Description)
     - [Projects](#Projects)
-- [Uploading Dataset](#Uploading-Dataset)
-- [Downloading Data & Labels](#Downloading-Data--Labels)
+    - [Labels](#Labels)
 - [Contributing](#Contributing)
 - [License](#License)
 
@@ -69,84 +68,9 @@ count, users = client.get_project_users()
 # Get project tags
 count, tags = client.get_project_tags()
 ```
+### Labels
+```python
 
-
-## Uploading Dataset
-
-<img src="./assets/upload.gif" width="800">
-
-You can upload data and create labels for your project with this command line interface. 
-
-Move to the dataset directory that has image files (with extension of `.jpg`, `.png`, `.gif`) and upload images in the directory by using the following CLI command:
-
-```shell
-$ cd some-folder
-$ spb upload dataset
-Project Name: my-project
-Dataset Name: my-dataset
-
-Uploading 3 data and 0 labels to dataset 'my-dataset' under project 'my-project'. Proceed? [y/N]: y
-Uploading data:
-100%|██████████████████████████████████████████████████| 3/3 [00:03<00:00,  1.06s/it]
-```
-
-If you wish to upload the **label** files along with the dataset, you can enable the `--include-label` option:
-
-```shell
-$ cd some-folder
-$ spb upload dataset --include-label
-Project Name: my-project
-Dataset Name: my-dataset
-
-Uploading 3 data and 0 labels to dataset 'my-dataset' under project 'my-project'. Proceed? [y/N]: y
-Uploading data:
-100%|██████████████████████████████████████████████████| 3/3 [00:03<00:00,  1.06s/it]
-Uploading labels:
-100%|██████████████████████████████████████████████████| 3/3 [00:03<00:00,  3.40s/it]
-```
-
-To learn how to create a **label** JSON file according to the Superb AI format, please refer to the **Annotation JSON File Structure** section in the linked [Superb AI Suite Manual](https://www.notion.so/Export-Result-Format-6d45fca9c85841aea7014372fb3dd2c8#bf31abcd73da4ad899ea05a4b052d262).
-
-<!---
-Or if you wish to only upload the **pre-label** :label: files:
-
-```shell
-$ spb upload labels
-Project Name: my-project
-Dataset Name: my-dataset
-```
-
-To understand how to construct a **label** JSON file according to the Superb AI format, please refer to the "Annotation JSON File Structure" section in the linked [Superb AI Suite Manual](https://www.notion.so/Export-Result-Format-6d45fca9c85841aea7014372fb3dd2c8#bf31abcd73da4ad899ea05a4b052d262).
--->
-
-## Downloading Data & Labels
-
-<img src="./assets/download.gif" width="800">
-
-You can download images and labels for a project by using the following command:
-```shell
-$ cd some-folder
-$ spb download
-Project Name: my-project
-
-Downloading 3 data and 3 labels from project 'my-project' to '.'. Proceed? [y/N]: y
-100%|██████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.11it/s]
-
-** Result Summary **
-Successful download of 3 out of 3 labels. (100.0%)
-Successful download of 3 out of 3 data. (100.0%)
-```
-
-The result is saved to the designated directory. For example:
-
-```
-└─ some-folder
-   └─ my-dataset
-      ├─ 1.jpg
-      ├─ 1.jpg.json
-      ├─ 2.jpg
-      ├─ 2.jpg.json
-      ...
 ```
 
 ## Contributing
