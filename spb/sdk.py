@@ -27,11 +27,10 @@ import os
 import random
 import time
 import uuid
+import re
 from typing import List, Optional, Dict, Union
 
-import boto3
 import spb
-from natsort import natsorted
 
 # from spb.assets.asset import Asset
 # from spb.assets.manager import AssetManager
@@ -81,7 +80,6 @@ class Client(object):
             self._project = None
         else:
             self._project = self.get_project(name=project_name)
-        self._s3 = boto3.client("s3")
 
     ##############################
     # Immutable variables
@@ -512,23 +510,6 @@ class Client(object):
             response = session.put(presigned_url, data=data)
         return result
 
-    def upload_image_s3(self, bucket_name, path, dataset_name, key=None):
-        if self._project is None:
-            raise ParameterException(f"[ERROR] Project ID is not described.")
-
-        name = path.split("/")[-1]
-        ext = path.split(".")[-1]
-        temp_path = "{:032x}.{}".format(random.getrandbits(128), ext)
-
-        self._s3.download_file(bucket_name, path, temp_path)
-
-        result = self.upload_image(temp_path, dataset_name, key, name=name)
-
-        if os.path.isfile(temp_path):
-            os.remove(temp_path)
-
-        return result
-
     def upload_video(self, path, dataset_name, key=None):
         if self._project is None:
             raise ParameterException(f"[ERROR] Project ID does not exist.")
@@ -549,12 +530,19 @@ class Client(object):
         if key is None:
             key = os.path.split(path)[-1]
 
+        def convert(text):
+            return int(text) if text.isdigit() else text.lower()
+        def alphanum_key(key):
+            return [convert(c) for c in re.split('([0-9]+)', key)]
+        def natsort_key(item):
+            return alphanum_key(item)
+
         asset_video = {
             "dataset": dataset_name,
             "data_key": key,
             "files": {
                 "path": path,
-                "file_names": natsorted(file_names),
+                "file_names": sorted(file_names, key=natsort_key),
             },
         }
         command = spb.Command(type="create_videodata")
