@@ -13,13 +13,12 @@ pytest = "==6.2.4"
 pylint = "==2.8.2"
 setuptools = "*"
 requests-mock = "==1.9.2"
+jupyter = "*"
 notebook = "*"
 
 [packages]
-requests = "==2.25.1"
-boto3 = "==1.17.82"
-semver = "==2.13.0"
-natsort = "==7.1.1"
+requests = "*"
+semver = "*"
 
 [requires]
 python_version = "3.8"
