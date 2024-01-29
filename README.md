@@ -47,36 +47,29 @@ access_key = GENERATED TEAM ACCESS KEY
 EOF
 ```
 
-Once configured, you can check the currently configured profile by using the `--list` option.
-
-
 ## Resource Description
 
 ### Projects
 
-<img src="./assets/describe-projects.gif" width="800">
+```python
+from spb import sdk
 
-You can list all projects that belong to the currently configured profile by using the following command:
-```shell
-$ spb describe projects
+client = sdk.Client()
+# Get all projects
+count, projects = client.get_projects()
+# Set project to client what to handle
+client.set_project(projects[0])
+# Get project name and id
+client.get_project_name()
+client.get_project_id()
 
-┏━━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━┓
-┃ NAME        ┃ DATA_TYPE ┃ LABELS ┃   IN PROGRESS ┃   SUBMITTED ┃ SKIPPED ┃
-┡━━━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━┩
-│ my-project  │   Image   │   6000 │   1000 (16 %) │ 2000 (33 %) │ 0 (0 %) │
-...
-Press any button to continue to the next page (1/10). Otherwise press ‘Q’ to quit.
+# Get all project users
+count, users = client.get_project_users()
 
-$ spb describe project --show reviews
-
-┏━━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┓
-┃ NAME        ┃ DATA_TYPE ┃ LABELS ┃IN PROGRESS    ┃IN PROGRESS    ┃SUBMITTED      ┃SUBMITTED      ┃SKIPEED       ┃SKIPEED       ┃
-┃             ┃           ┃        ┃Rejected       ┃Not Submitted  ┃Approved       ┃Pending Review ┃Approved      ┃Pending Review┃
-┡━━━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━┩
-│ my-project  │   Image   │   6000 │ 1000          │ 1000          │ 1000          │ 1000          │ 1000         │ 1000         │
-...
-Press any button to continue to the next page (1/10). Otherwise press ‘Q’ to quit.
+# Get project tags
+count, tags = client.get_project_tags()
 ```
+
 
 ## Uploading Dataset
 
