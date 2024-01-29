@@ -510,23 +510,6 @@ class Client(object):
             response = session.put(presigned_url, data=data)
         return result
 
-    # def upload_image_s3(self, bucket_name, path, dataset_name, key=None):
-    #     if self._project is None:
-    #         raise ParameterException(f"[ERROR] Project ID is not described.")
-
-    #     name = path.split("/")[-1]
-    #     ext = path.split(".")[-1]
-    #     temp_path = "{:032x}.{}".format(random.getrandbits(128), ext)
-
-    #     self._s3.download_file(bucket_name, path, temp_path)
-
-    #     result = self.upload_image(temp_path, dataset_name, key, name=name)
-
-    #     if os.path.isfile(temp_path):
-    #         os.remove(temp_path)
-
-    #     return result
-
     def upload_video(self, path, dataset_name, key=None):
         if self._project is None:
             raise ParameterException(f"[ERROR] Project ID does not exist.")

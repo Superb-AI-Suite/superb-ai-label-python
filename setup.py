@@ -42,11 +42,8 @@ setup(
     long_description=long_description(),
     long_description_content_type="text/markdown",
     install_requires=[
-        "requests>=2.31.0,<3.0.0",
-        "botocore>=1.20.82",
-        "boto3>=1.17.82",
-        "natsort>=7.1.0",
-        "semver==2.13.0",
+        "requests",
+        "semver",
     ],
     zip_safe=False,
     dependency_links=[],
