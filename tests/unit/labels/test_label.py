@@ -1,10 +1,10 @@
 import uuid
 import unittest
 
-from spb.labels.manager import LabelManager
-from spb.labels import Label
-from spb.labels.label import Tags, Stats
-from spb.exceptions import AttributeTypeException
+from spb_label.labels.manager import LabelManager
+from spb_label.labels import Label
+from spb_label.labels.label import Tags, Stats
+from spb_label.exceptions import AttributeTypeException
 
 
 class LabelTest(unittest.TestCase):

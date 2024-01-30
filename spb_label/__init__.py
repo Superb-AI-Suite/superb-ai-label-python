@@ -25,19 +25,19 @@ import logging
 # from spb.labels.manager import LabelManager
 # from spb.data.manager import DataManager
 
-from spb.command import Command
-from spb.core.session import BaseSession as CoreSession
-from spb.exceptions import CommandInitiationFailedException
-from spb.sdk_config import (
+from spb_label.command import Command
+from spb_label.core.session import BaseSession as CoreSession
+from spb_label.exceptions import CommandInitiationFailedException
+from spb_label.sdk_config import (
     DEFAULT_CORE_SESSION,
     DEFAULT_SESSION,
     SDK_AUTHOR,
     SDK_VERSION,
 )
-from spb.session import Session
+from spb_label.session import Session
 
 # from spb.spb_logger import SPBLogger
-from spb.spb_logger import create_logger
+from spb_label.spb_logger import create_logger
 
 # import spb.exceptions
 

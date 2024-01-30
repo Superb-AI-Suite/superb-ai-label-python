@@ -1,9 +1,9 @@
 import os
 import requests
 
-from spb.core.session import BaseSession
-from spb.exceptions import APIFormatException, APIException
-from spb.utils.utils import requests_retry_session
+from spb_label.core.session import BaseSession
+from spb_label.exceptions import APIFormatException, APIException
+from spb_label.utils.utils import requests_retry_session
 
 from .label import Label
 

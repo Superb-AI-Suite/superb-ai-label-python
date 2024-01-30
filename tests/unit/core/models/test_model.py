@@ -1,10 +1,10 @@
 import unittest
 import uuid
 
-from spb.core.models.types import ID, JsonObject, String, Int, Float, Boolean, List, PlainObject, PlainObjectList
-from spb.core import Model
-from spb.core.models.attrs import AttributeModel
-from spb.exceptions import DoesNotExistsAttribute, AttributeTypeException
+from spb_label.core.models.types import ID, JsonObject, String, Int, Float, Boolean, List, PlainObject, PlainObjectList
+from spb_label.core import Model
+from spb_label.core.models.attrs import AttributeModel
+from spb_label.exceptions import DoesNotExistsAttribute, AttributeTypeException
 
 
 class WrongAttribute():

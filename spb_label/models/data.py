@@ -1,10 +1,10 @@
 import os
 import requests
 import base64
-from spb.datauri import DataURI
-from spb.orm import Model
-from spb.orm.utils import is_data_url, is_url
-from spb.orm.type import String, ID, Number
+from spb_label.datauri import DataURI
+from spb_label.orm import Model
+from spb_label.orm.utils import is_data_url, is_url
+from spb_label.orm.type import String, ID, Number
 
 
 class Data(Model):

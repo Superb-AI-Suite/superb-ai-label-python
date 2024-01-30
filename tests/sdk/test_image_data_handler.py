@@ -3,23 +3,23 @@ import json
 from uuid import UUID
 from unittest.mock import patch, Mock
 
-import spb.sdk
+import spb_label.sdk
 from .mocks import MOCK_PROJECT, MOCK_LABEL, MOCK_DATA_HANDLE
-from spb.labels.session import Session
-from spb.labels.serializer import LabelInfoBuildParams
-from spb.labels.label import WorkappType
+from spb_label.labels.session import Session
+from spb_label.labels.serializer import LabelInfoBuildParams
+from spb_label.labels.label import WorkappType
 
 
 class TestImageDataHandler(unittest.TestCase):
 
-    @patch('spb.sdk.Client.get_project')
+    @patch('spb_label.sdk.Client.get_project')
     def setUp(self, mock):
         # Settings about mock data
         mock.return_value = MOCK_PROJECT
 
-        self.client = spb.sdk.Client(project_name='PROJECT_NAME_TO_TEST')
+        self.client = spb_label.sdk.Client(project_name='PROJECT_NAME_TO_TEST')
 
-        with patch.object(spb.sdk.Client, 'get_data_page') as mock_method:
+        with patch.object(spb_label.sdk.Client, 'get_data_page') as mock_method:
             mock_method.return_value = iter([MOCK_DATA_HANDLE])
             self.data = next(self.client.get_data_page(page_idx=0, page_size=1, dataset='DATASET_NAME_TO_TEST'))
 

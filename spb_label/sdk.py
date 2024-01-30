@@ -30,33 +30,33 @@ import uuid
 import re
 from typing import List, Optional, Dict, Union
 
-import spb
+import spb_label
 
 # from spb.assets.asset import Asset
 # from spb.assets.manager import AssetManager
-from spb.exceptions import (
+from spb_label.exceptions import (
     NotSupportedException,
     ParameterException,
     PreConditionException,
 )
-from spb.exports.manager import ExportManager
-from spb.labels.manager import LabelManager
-from spb.labels.label import Label, WorkappType
-from spb.projects import Project, Tag
-from spb.projects.manager import ProjectManager
-from spb.tasks.manager import TaskManager
-from spb.utils.utils import requests_retry_session
-from spb.image_sdk import DataHandle
-from spb.video_sdk import VideoDataHandle
-from spb.pointcloud_sdk import PointcloudDataHandle
-from spb.utils.search_filter import SearchFilter
-from spb.users.manager import UserManager
-from spb.users import User
+from spb_label.exports.manager import ExportManager
+from spb_label.labels.manager import LabelManager
+from spb_label.labels.label import Label, WorkappType
+from spb_label.projects import Project, Tag
+from spb_label.projects.manager import ProjectManager
+from spb_label.tasks.manager import TaskManager
+from spb_label.utils.utils import requests_retry_session
+from spb_label.image_sdk import DataHandle
+from spb_label.video_sdk import VideoDataHandle
+from spb_label.pointcloud_sdk import PointcloudDataHandle
+from spb_label.utils.search_filter import SearchFilter
+from spb_label.users.manager import UserManager
+from spb_label.users import User
 
 logger = logging.getLogger()
 
-__author__ = spb.__author__
-__version__ = spb.__version__
+__author__ = spb_label.__author__
+__version__ = spb_label.__version__
 
 __all__ = ("Client", "DataHandle", "VideoDataHandle", "PointcloudDataHandle")
 
@@ -68,7 +68,7 @@ class Client(object):
         super().__init__()
 
         if team_name is not None and access_key is not None:
-            spb.setup_default_session(team_name=team_name, access_key=access_key)
+            spb_label.setup_default_session(team_name=team_name, access_key=access_key)
             self.credential = {
                 "team_name": team_name,
                 "access_key": access_key,
@@ -409,12 +409,12 @@ class Client(object):
         workapp = self._project.workapp
         if workapp == "video-siesta":
             # Video
-            command = spb.Command(type="describe_videolabel")
+            command = spb_label.Command(type="describe_videolabel")
             tags = [{"name": tag} for tag in tags]
             option = {"project_id": self._project.id, "tags": tags, **kwargs}
             # manager = VideoLabelManager(self.credential["team"], self.credential["access_key"])
             # _, data_page = manager.get_labels(**option)
-            data_page, _ = spb.run(
+            data_page, _ = spb_label.run(
                 command=command,
                 option=option,
                 page=page_idx,
@@ -490,7 +490,7 @@ class Client(object):
         if key is None:
             key = name
 
-        command = spb.Command(type="create_data")
+        command = spb_label.Command(type="create_data")
         option = {
             "file": path,
             "file_name": name,
@@ -498,7 +498,7 @@ class Client(object):
             "data_key": key,
         }
 
-        result = spb.run(
+        result = spb_label.run(
             command=command,
             optional={"projectId": self._project.id},
             option=option,
@@ -545,8 +545,8 @@ class Client(object):
                 "file_names": sorted(file_names, key=natsort_key),
             },
         }
-        command = spb.Command(type="create_videodata")
-        result = spb.run(
+        command = spb_label.Command(type="create_videodata")
+        result = spb_label.run(
             command=command,
             option=asset_video,
             optional={"projectId": self._project.id},

@@ -4,7 +4,7 @@ from typing import List
 from .session import Session
 from .query import Query
 from .user import User
-from spb.core.manager import BaseManager
+from spb_label.core.manager import BaseManager
 
 
 class UserManager(BaseManager):

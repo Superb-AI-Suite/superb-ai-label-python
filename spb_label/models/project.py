@@ -1,7 +1,7 @@
-from spb.orm import Model
-from spb.orm import AttributeModel
-from spb.orm.type import String, ID, Number, Object
-from spb.orm.json_type import JsonObject
+from spb_label.orm import Model
+from spb_label.orm import AttributeModel
+from spb_label.orm.type import String, ID, Number, Object
+from spb_label.orm.json_type import JsonObject
 
 class Class(AttributeModel):
     def __init__(self, *args, **kwargs ):

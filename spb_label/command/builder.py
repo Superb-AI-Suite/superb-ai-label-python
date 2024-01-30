@@ -26,7 +26,7 @@ from .commands import (
     DeleteCommand,
     UpdateCommand
 )
-from spb.exceptions import CommandInitiationFailedException
+from spb_label.exceptions import CommandInitiationFailedException
 
 
 class CommandBuilder:

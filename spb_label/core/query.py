@@ -1,8 +1,8 @@
 import logging
 from typing import Dict, List, Tuple
 
-from spb.core.models.types import Type
-from spb.exceptions import QueryTypeException
+from spb_label.core.models.types import Type
+from spb_label.exceptions import QueryTypeException
 
 logger = logging.getLogger()
 

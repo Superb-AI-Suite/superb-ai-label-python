@@ -2,8 +2,8 @@ import unittest
 import uuid
 from unittest.mock import patch, Mock
 
-from spb.labels import Label
-from spb.labels.manager import LabelManager
+from spb_label.labels import Label
+from spb_label.labels.manager import LabelManager
 
 class LabelManagerTest(unittest.TestCase):
     def setUp(self):

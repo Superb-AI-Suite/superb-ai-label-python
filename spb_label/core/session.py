@@ -6,8 +6,8 @@ import os
 from collections import deque
 
 import requests
-from spb.core.models.attrs import AttributeEncoder
-from spb.exceptions import (
+from spb_label.core.models.attrs import AttributeEncoder
+from spb_label.exceptions import (
     APIException,
     APILimitExceededException,
     APIUnknownException,
@@ -21,7 +21,7 @@ from spb.exceptions import (
     SDKInitiationFailedException,
     UnauthorizedException,
 )
-from spb.utils.utils import requests_retry_session
+from spb_label.utils.utils import requests_retry_session
 
 logger = logging.getLogger()
 

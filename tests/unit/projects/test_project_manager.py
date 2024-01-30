@@ -2,9 +2,9 @@ import unittest
 import uuid
 from unittest.mock import Mock, patch
 
-from spb.projects import Project
-from spb.projects.manager import ProjectManager
-from spb.projects.query import Query
+from spb_label.projects import Project
+from spb_label.projects.manager import ProjectManager
+from spb_label.projects.query import Query
 
 from .mocks import (
     MOCK_PROJECT,
