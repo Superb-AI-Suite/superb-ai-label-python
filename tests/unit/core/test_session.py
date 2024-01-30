@@ -3,8 +3,8 @@ import os
 
 from unittest.mock import patch, Mock
 
-from spb.core.session import BaseSession as Session
-from spb.exceptions import AuthenticateFailedException, APILimitExceededException, SDKInitiationFailedException, APIException
+from spb_label.core.session import BaseSession as Session
+from spb_label.exceptions import AuthenticateFailedException, APILimitExceededException, SDKInitiationFailedException, APIException
 
 
 class SessionConfigurationTest(unittest.TestCase):

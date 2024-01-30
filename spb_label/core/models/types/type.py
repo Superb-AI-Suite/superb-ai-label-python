@@ -3,8 +3,8 @@ import json
 from typing import Dict
 from uuid import UUID
 
-from spb.core.models.attrs import AttributeModel
-from spb.exceptions import AttributeTypeException, ImmutableValueChangeException
+from spb_label.core.models.attrs import AttributeModel
+from spb_label.exceptions import AttributeTypeException, ImmutableValueChangeException
 
 from .type_base import Type
 

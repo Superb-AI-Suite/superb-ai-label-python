@@ -1,8 +1,8 @@
 import json
-from spb.orm import Model
-from spb.orm import ListAttribute
-from spb.orm.type import String, ID, Number, Object
-from spb.utils.utils import requests_retry_session
+from spb_label.orm import Model
+from spb_label.orm import ListAttribute
+from spb_label.orm.type import String, ID, Number, Object
+from spb_label.utils.utils import requests_retry_session
 
 class Stats(ListAttribute):
     def __init__(self, *args, **kwargs):

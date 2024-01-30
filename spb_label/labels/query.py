@@ -1,8 +1,8 @@
 from typing import Optional, List
 
-from spb.core.query import BaseQuery
-from spb.exceptions import QueryTypeException
-from spb.utils.search_filter import SearchFilter
+from spb_label.core.query import BaseQuery
+from spb_label.exceptions import QueryTypeException
+from spb_label.utils.search_filter import SearchFilter
 
 from .label import Tags
 

@@ -1,8 +1,8 @@
 import json
-from spb.orm.json_type import JsonObject
-from spb.orm import Model
-from spb.orm import ListAttribute
-from spb.orm.type import String, ID, Number, Object
+from spb_label.orm.json_type import JsonObject
+from spb_label.orm import Model
+from spb_label.orm import ListAttribute
+from spb_label.orm.type import String, ID, Number, Object
 
 
 class Stats(ListAttribute):

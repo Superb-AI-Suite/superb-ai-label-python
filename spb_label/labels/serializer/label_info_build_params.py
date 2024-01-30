@@ -1,7 +1,7 @@
-from spb.exceptions import SDKException
-from spb.libs.phy_credit.phy_credit.imageV2 import build_label_info as image_build_label_info
-from spb.libs.phy_credit.phy_credit.video import build_label_info as video_build_label_info
-from spb.labels.label import WorkappType
+from spb_label.exceptions import SDKException
+from spb_label.libs.phy_credit.phy_credit.imageV2 import build_label_info as image_build_label_info
+from spb_label.libs.phy_credit.phy_credit.video import build_label_info as video_build_label_info
+from spb_label.labels.label import WorkappType
 
 
 class LabelInfoBuildParams:

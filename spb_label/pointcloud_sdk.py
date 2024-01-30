@@ -2,14 +2,14 @@ import urllib
 import json
 import os
 
-from spb.image_sdk import DataHandle
-from spb.labels.manager import LabelManager
-from spb.exceptions import (
+from spb_label.image_sdk import DataHandle
+from spb_label.labels.manager import LabelManager
+from spb_label.exceptions import (
     ParameterException,
     NotSupportedException,
     SDKException
 )
-from spb.utils import deprecated
+from spb_label.utils import deprecated
 
 
 class PointcloudDataHandle (DataHandle):

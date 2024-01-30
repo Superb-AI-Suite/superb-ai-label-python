@@ -1,19 +1,19 @@
 import unittest
 from unittest.mock import patch, Mock
 
-import spb.sdk
-from spb.labels.session import Session
+import spb_label.sdk
+from spb_label.labels.session import Session
 from .mocks import MOCK_PROJECT
 
 
 class TestSDK(unittest.TestCase):
     def setUp(self):
-        with patch.object(spb.sdk.Client, 'get_project') as mock_method:
+        with patch.object(spb_label.sdk.Client, 'get_project') as mock_method:
             mock_method.return_value = MOCK_PROJECT
-            self.client = spb.sdk.Client(project_name='PROJECT_NAME_TO_TEST')
+            self.client = spb_label.sdk.Client(project_name='PROJECT_NAME_TO_TEST')
 
     def test_init_sdk(self):
-        self.assertTrue(self.client, spb.sdk.Client)
+        self.assertTrue(self.client, spb_label.sdk.Client)
         self.assertEqual(self.client.get_project_name(), 'PROJECT_NAME_TO_TEST')
 
     def test_project_data(self):
