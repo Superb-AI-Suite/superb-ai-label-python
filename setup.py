@@ -9,7 +9,7 @@ def long_description():
     return readme
 
 def load_config():
-    with io.open("spb/sdk_config.py") as fid:
+    with io.open("spb_label/sdk_config.py") as fid:
         result = {}
         for line in fid:
             try:
