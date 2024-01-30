@@ -51,7 +51,7 @@ EOF
 ### Projects
 
 ```python
-from spb import sdk
+from spb_label import sdk
 
 client = sdk.Client()
 # Get all projects
@@ -70,8 +70,8 @@ count, tags = client.get_project_tags()
 ```
 ### Labels
 ```python
-from spb import sdk
-from spb.utils import SearchFilter
+from spb_label import sdk
+from spb_label.utils import SearchFilter
 
 client = sdk.Client()
 client.set_project(name="YOUR PROJECT NAME")

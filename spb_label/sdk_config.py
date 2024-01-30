@@ -1,0 +1,10 @@
+SDK_NAME='superb-ai-label'
+SDK_AUTHOR='Superb AI Dev Team'
+SDK_VERSION='0.18.6'
+SDK_AUTHOR_EMAIL='support@superb-ai.com'
+SDK_DESCRIPTION='Suite Standard Library'
+SDK_LICENSE='MIT'
+SDK_URL='https://github.com/Superb-AI-Suite/superb-ai-curate-python.git'
+# End of read (setup.py)
+DEFAULT_SESSION=None
+DEFAULT_CORE_SESSION=None
