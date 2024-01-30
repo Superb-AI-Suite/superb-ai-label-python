@@ -1,23 +1,23 @@
-import spb
+import spb_label
 import json
 import urllib
 import os
 
-from spb.image_sdk import DataHandle
-from spb.utils.utils import requests_retry_session
-from spb.exceptions import (
+from spb_label.image_sdk import DataHandle
+from spb_label.utils.utils import requests_retry_session
+from spb_label.exceptions import (
     NotSupportedException,
 )
-from spb.utils import deprecated
+from spb_label.utils import deprecated
 
 
 class VideoDataHandle(DataHandle):
     def _upload_to_suite(self, info=None):
-        command = spb.Command(type="update_videolabel")
+        command = spb_label.Command(type="update_videolabel")
         if info is None:
-            _ = spb.run(command=command, option=self._data)
+            _ = spb_label.run(command=command, option=self._data)
         else:
-            _ = spb.run(
+            _ = spb_label.run(
                 command=command,
                 option=self._data,
                 optional={"info": json.dumps(info)},

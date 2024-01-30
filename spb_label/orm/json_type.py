@@ -1,5 +1,5 @@
 import json
-from spb.exceptions import ImmutableValueChangeException, AttributeTypeException
+from spb_label.exceptions import ImmutableValueChangeException, AttributeTypeException
 from .type_base import Type
 
 

@@ -1,5 +1,5 @@
-from spb.core.query import BaseQuery as Query
-from spb.core.session import BaseSession as Session
+from spb_label.core.query import BaseQuery as Query
+from spb_label.core.session import BaseSession as Session
 
 
 class BaseManager(object):

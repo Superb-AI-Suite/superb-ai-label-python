@@ -5,14 +5,14 @@ import os
 
 import requests
 
-from spb.exceptions import (APIException, APILimitExceededException,
+from spb_label.exceptions import (APIException, APILimitExceededException,
                             APIUnknownException, AuthenticateFailedException,
                             BadRequestException, ConflictException,
                             ForbiddenException, NotAvailableServerException,
                             NotFoundException, SDKInitiationFailedException,
                             UnauthorizedException)
-from spb.models.project import Project
-from spb.utils.utils import requests_retry_session
+from spb_label.models.project import Project
+from spb_label.utils.utils import requests_retry_session
 
 
 class Session:

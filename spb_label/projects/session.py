@@ -1,7 +1,7 @@
 import os
 
-from spb.core.session import BaseSession
-from spb.exceptions import APIFormatException
+from spb_label.core.session import BaseSession
+from spb_label.exceptions import APIFormatException
 
 from .project import Project, Tag
 

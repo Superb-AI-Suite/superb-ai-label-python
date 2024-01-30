@@ -1,5 +1,5 @@
-from spb.core import Model
-from spb.core.models.types import (
+from spb_label.core import Model
+from spb_label.core.models.types import (
     String,
 
 )

@@ -6,8 +6,8 @@ from dataclasses import dataclass
 from enum import Enum
 from typing import Optional, List
 from datetime import datetime, timezone
-from spb.projects.project import Project
-from spb.exceptions import ParameterException
+from spb_label.projects.project import Project
+from spb_label.exceptions import ParameterException
 
 
 class Status(Enum):

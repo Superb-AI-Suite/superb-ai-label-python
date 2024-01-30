@@ -1,7 +1,7 @@
 import uuid
 
-from spb.core import Model
-from spb.core.models.types import JsonObject, String, ID, Int
+from spb_label.core import Model
+from spb_label.core.models.types import JsonObject, String, ID, Int
 
 
 class Export(Model):

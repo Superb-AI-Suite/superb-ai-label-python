@@ -2,7 +2,7 @@ import logging
 import uuid
 from typing import Optional
 
-from spb.core.manager import BaseManager
+from spb_label.core.manager import BaseManager
 
 from .export import Export
 from .query import Query

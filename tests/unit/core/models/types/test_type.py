@@ -2,9 +2,9 @@ import pytest
 import unittest
 import uuid
 
-from spb.core.models.attrs import AttributeModel
-from spb.core.models.types import Type, ID, JsonObject, String, Int, Float, Boolean, List, PlainObject, PlainObjectList
-from spb.exceptions import ImmutableValueChangeException, AttributeTypeException, TypeInitiationFailedException
+from spb_label.core.models.attrs import AttributeModel
+from spb_label.core.models.types import Type, ID, JsonObject, String, Int, Float, Boolean, List, PlainObject, PlainObjectList
+from spb_label.exceptions import ImmutableValueChangeException, AttributeTypeException, TypeInitiationFailedException
 
 
 '''

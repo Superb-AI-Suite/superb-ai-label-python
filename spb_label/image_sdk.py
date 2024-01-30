@@ -3,14 +3,14 @@ import urllib
 
 from typing import Union, Optional, List
 
-from spb.exceptions import (
+from spb_label.exceptions import (
     ParameterException,
 )
-from spb.labels.serializer import LabelInfoBuildParams
-from spb.labels.label import WorkappType, Tags
-from spb.labels.manager import LabelManager
-from spb.users.user import User
-from spb.utils import deprecated
+from spb_label.labels.serializer import LabelInfoBuildParams
+from spb_label.labels.label import WorkappType, Tags
+from spb_label.labels.manager import LabelManager
+from spb_label.users.user import User
+from spb_label.utils import deprecated
 
 
 class DataHandle(object):

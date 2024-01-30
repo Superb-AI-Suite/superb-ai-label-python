@@ -1,9 +1,9 @@
 import uuid
 from enum import Enum
 
-from spb.core import Model
-from spb.core.models.attrs import AttributeModel
-from spb.core.models.types import JsonObject, String, ID, Int, PlainObjectList, Float
+from spb_label.core import Model
+from spb_label.core.models.attrs import AttributeModel
+from spb_label.core.models.types import JsonObject, String, ID, Int, PlainObjectList, Float
 
 
 class WorkappType(Enum):
