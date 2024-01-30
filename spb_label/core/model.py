@@ -1,9 +1,9 @@
-from spb.core.models.attrs import AttributeContainer
-from spb.core.models.types import Type
-from spb.exceptions import (
+from spb_label.core.models.attrs import AttributeContainer
+from spb_label.core.models.types import Type
+from spb_label.exceptions import (
     DoesNotExistsAttribute,
 )
-from spb.orm.utils import attrs
+from spb_label.orm.utils import attrs
 
 
 class ModelMeta(type):

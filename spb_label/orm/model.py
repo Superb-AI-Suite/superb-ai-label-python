@@ -1,9 +1,9 @@
 import json
-from spb.orm.manager import Manager
-from spb.orm.type_base import Type
-from spb.orm.json_type import JsonObject
-from spb.orm.utils import *
-from spb.exceptions import ModelInitiationFailedException
+from spb_label.orm.manager import Manager
+from spb_label.orm.type_base import Type
+from spb_label.orm.json_type import JsonObject
+from spb_label.orm.utils import *
+from spb_label.exceptions import ModelInitiationFailedException
 
 class ModelMeta(type):
     def __new__(cls, name, bases, attrs, **kwargs):

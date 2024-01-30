@@ -1,6 +1,6 @@
 import json
 from uuid import UUID
-from spb.exceptions import ImmutableValueChangeException, AttributeTypeException
+from spb_label.exceptions import ImmutableValueChangeException, AttributeTypeException
 from .model import ListAttribute, AttributeModel
 from .type_base import Type
 

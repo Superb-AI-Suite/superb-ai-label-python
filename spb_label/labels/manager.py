@@ -4,13 +4,13 @@ import uuid
 from typing import Optional, Union, List
 
 import requests
-from spb.core.manager import BaseManager
-from spb.exceptions import APIException, ParameterException, NotSupportedException
-from spb.labels.serializer import LabelInfoBuildParams
-from spb.utils.utils import requests_retry_session
-from spb.utils.search_filter import SearchFilter
-from spb.projects.project import Project
-from spb.users.user import User
+from spb_label.core.manager import BaseManager
+from spb_label.exceptions import APIException, ParameterException, NotSupportedException
+from spb_label.labels.serializer import LabelInfoBuildParams
+from spb_label.utils.utils import requests_retry_session
+from spb_label.utils.search_filter import SearchFilter
+from spb_label.projects.project import Project
+from spb_label.users.user import User
 
 from .label import Label, WorkappType, Tags
 from .query import Query

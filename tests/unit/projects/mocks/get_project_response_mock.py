@@ -1,4 +1,4 @@
-from spb.projects import Project
+from spb_label.projects import Project
 
 MOCK_PROJECT_JSON = {
     "id": "a9c1f5fa-e698-446b-ab96-fdf9f68a9625",

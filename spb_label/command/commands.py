@@ -22,7 +22,7 @@
 
 import abc
 
-from spb.orm import Loader
+from spb_label.orm import Loader
 
 
 class BaseCommand(metaclass=abc.ABCMeta):

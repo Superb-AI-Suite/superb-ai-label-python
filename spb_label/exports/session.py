@@ -1,8 +1,8 @@
 import os
 
-from spb.core.session import BaseSession
-from spb.exceptions import APIFormatException
-from spb.exports.export import Export
+from spb_label.core.session import BaseSession
+from spb_label.exceptions import APIFormatException
+from spb_label.exports.export import Export
 
 
 class Session(BaseSession):

@@ -1,8 +1,8 @@
 import uuid
 
-from spb.core import Model
-from spb.core.models.attrs import AttributeModel
-from spb.core.models.types import (
+from spb_label.core import Model
+from spb_label.core.models.attrs import AttributeModel
+from spb_label.core.models.types import (
     ID,
     Boolean,
     Int,

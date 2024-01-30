@@ -1,5 +1,5 @@
 import abc
-from spb.exceptions import ImmutableValueChangeException
+from spb_label.exceptions import ImmutableValueChangeException
 
 class Type(object):
     type_name = None

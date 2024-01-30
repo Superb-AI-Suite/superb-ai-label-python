@@ -1,8 +1,8 @@
-import spb
+import spb_label
 
 from .utils import *
 from .query import Query
-from spb.exceptions import ModelInitiationFailedException
+from spb_label.exceptions import ModelInitiationFailedException
 
 class Manager(object):  # pylint: disable=R0205
     ''' Data mapper interface (generic repository) for models '''
@@ -10,7 +10,7 @@ class Manager(object):  # pylint: disable=R0205
     def __init__(self, model, type_check=True):
         self.model = model
         self.type_check = type_check
-        self.session = spb._get_default_session()
+        self.session = spb_label._get_default_session()
 
     def _get_model_object(self, options):
         try:

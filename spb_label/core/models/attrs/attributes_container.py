@@ -2,7 +2,7 @@ import json
 
 from copy import deepcopy
 
-from spb.exceptions import ModelInitiationFailedException
+from spb_label.exceptions import ModelInitiationFailedException
 
 
 class AttributeEncoder(json.JSONEncoder):

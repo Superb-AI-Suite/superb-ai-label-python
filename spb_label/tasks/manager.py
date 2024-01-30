@@ -4,11 +4,11 @@ from datetime import datetime
 from .session import Session
 from .query import Query
 from .task import Task
-from spb.core.manager import BaseManager
-from spb.labels.manager import LabelManager
-from spb.exceptions import ParameterException
-from spb.projects.project import Project
-from spb.utils import SearchFilter
+from spb_label.core.manager import BaseManager
+from spb_label.labels.manager import LabelManager
+from spb_label.exceptions import ParameterException
+from spb_label.projects.project import Project
+from spb_label.utils import SearchFilter
 
 
 class TaskManager(BaseManager):

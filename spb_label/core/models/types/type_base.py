@@ -1,6 +1,6 @@
 import abc
 
-from spb.exceptions import  TypeInitiationFailedException, NotImplementedException
+from spb_label.exceptions import  TypeInitiationFailedException, NotImplementedException
 
 
 class Type(object):
