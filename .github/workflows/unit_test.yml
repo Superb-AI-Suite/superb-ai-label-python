@@ -75,3 +75,47 @@ jobs:
         SPB_APP_API_ENDPOINT: https://api.dev.superb-ai.com
       run: |
         python -m pytest ./tests
+
+  unit_test_python310:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.10
+    - name: install packages
+      run: |
+        pip3 install pytest
+    - name: SPB-SDK Install
+      run: |
+        python setup.py install
+    - name: Unit test with pytest
+      env:
+        SPB_ACCESS_KEY: ${{ secrets.SPB_ACCESS_KEY }}
+        SPB_TEAM_NAME: ${{ secrets.SPB_TEAM_NAME }}
+        SPB_APP_API_ENDPOINT: https://api.dev.superb-ai.com
+      run: |
+        python -m pytest ./tests
+
+  unit_test_python311:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.11
+    - name: install packages
+      run: |
+        pip3 install pytest
+    - name: SPB-SDK Install
+      run: |
+        python setup.py install
+    - name: Unit test with pytest
+      env:
+        SPB_ACCESS_KEY: ${{ secrets.SPB_ACCESS_KEY }}
+        SPB_TEAM_NAME: ${{ secrets.SPB_TEAM_NAME }}
+        SPB_APP_API_ENDPOINT: https://api.dev.superb-ai.com
+      run: |
+        python -m pytest ./tests
