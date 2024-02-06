@@ -63,7 +63,11 @@ __all__ = ("Client", "DataHandle", "VideoDataHandle", "PointcloudDataHandle")
 
 class Client(object):
     def __init__(
-        self, project_name=None, team_name: str = None, access_key: str = None
+        self,
+        project_name=None,
+        team_name: str = None,
+        access_key: str = None,
+        project_id: str = None,
     ):
         super().__init__()
 
@@ -76,10 +80,13 @@ class Client(object):
         else:
             self.credential = {"team_name": None, "access_key": None}
 
-        if project_name is None:
-            self._project = None
-        else:
+        if project_id is not None:
+            self._project = self.get_project(id=uuid.UUID(project_id))
+        elif project_name is not None:
             self._project = self.get_project(name=project_name)
+        else:
+            self._project = None
+            
 
     ##############################
     # Immutable variables
