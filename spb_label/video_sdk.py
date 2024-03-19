@@ -8,7 +8,10 @@ from spb_label.utils.utils import requests_retry_session
 from spb_label.exceptions import (
     NotSupportedException,
 )
-from spb_label.utils import deprecated
+from spb_label.utils import (
+    deprecated,
+    retrieve_file,
+)
 
 
 class VideoDataHandle(DataHandle):
@@ -83,10 +86,10 @@ class VideoDataHandle(DataHandle):
         data_url = json.loads(self._data.data_url)
         for frame_idx, file_info in enumerate(data_url["file_infos"]):
             url = self.get_frame_url(frame_idx, data_url)
-            urllib.request.urlretrieve(
-                url, os.path.join(download_to, file_info["file_name"])
+            retrieve_file(
+                url=url,
+                file_path=os.path.join(download_to, file_info["file_name"])
             )
-
         return True
 
     def get_frames(self):
