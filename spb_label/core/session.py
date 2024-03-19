@@ -21,6 +21,7 @@ from spb_label.exceptions import (
     SDKInitiationFailedException,
     UnauthorizedException,
 )
+from spb_label.utils import requests_retry_session
 
 logger = logging.getLogger()
 
