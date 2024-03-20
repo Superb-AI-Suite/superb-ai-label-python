@@ -1,6 +1,6 @@
 from spb_label.exceptions import SDKException
-from spb_label.libs.phy_credit.phy_credit.imageV2 import build_label_info as image_build_label_info
-from spb_label.libs.phy_credit.phy_credit.video import build_label_info as video_build_label_info
+from phy_credit.imageV2 import build_label_info as image_build_label_info
+from phy_credit.video import build_label_info as video_build_label_info
 from spb_label.labels.label import WorkappType
 
 
@@ -57,6 +57,7 @@ class LabelInfoBuildParams:
     def add_object(self, **kwargs):
         if self._label_info is not None:
             if self._workapp == WorkappType.IMAGE_SIESTA.value:
+                print(kwargs)
                 self._label_info.add_object(
                     class_name=kwargs["class_name"],
                     annotation=kwargs["annotation"],
@@ -75,6 +76,7 @@ class LabelInfoBuildParams:
     def set_categories(self, **kwargs):
         if self._label_info is not None:
             if self._workapp == WorkappType.IMAGE_SIESTA.value:
+                print(self._label_info, kwargs)
                 self._label_info.set_categories(
                     properties=kwargs.get("properties", None)
                 )

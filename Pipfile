@@ -19,6 +19,7 @@ notebook = "*"
 [packages]
 requests = "*"
 semver = "*"
+phy-credit = "==0.8.1"
 
 [requires]
 python_version = "3.8"

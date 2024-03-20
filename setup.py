@@ -46,6 +46,7 @@ setup(
     install_requires=[
         "requests",
         "semver",
+        "phy-credit==0.8.1"
     ],
     zip_safe=False,
     dependency_links=[],
