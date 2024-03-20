@@ -1,4 +1,4 @@
-from spb.models import Project
+from spb_label.models import Project
 
 MOCK_PROJECT_DATA =  {
                     "id": "2ece675e-6341-4eb3-ab1d-656df394385a",

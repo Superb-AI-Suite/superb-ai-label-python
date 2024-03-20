@@ -2,10 +2,10 @@ import pytest
 import unittest
 import uuid
 
-from spb.core import Model
-from spb.core.manager import BaseManager as Manager
-from spb.core.query import BaseQuery as Query
-from spb.core.session import BaseSession as Session
+from spb_label.core import Model
+from spb_label.core.manager import BaseManager as Manager
+from spb_label.core.query import BaseQuery as Query
+from spb_label.core.session import BaseSession as Session
 
 
 class ManagerTest(unittest.TestCase):
