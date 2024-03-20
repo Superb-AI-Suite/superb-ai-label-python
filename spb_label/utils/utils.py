@@ -40,11 +40,9 @@ def retrieve_file(*, url, file_path):
     folder, _ = os.path.split(file_path)
     if folder:
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
-    
-    with requests_retry_session() as session:
-        response = session.get(url, stream=True)
-        response.raise_for_status()
-        with open(file_path, 'wb') as file:
-            for chunk in response.iter_content(chunk_size=8192):
-                file.write(chunk)
+    response = requests_retry_session() .get(url, stream=True)
+    response.raise_for_status()
+    with open(file_path, 'wb') as file:
+        for chunk in response.iter_content(chunk_size=8192):
+            file.write(chunk)
     return file_path
