@@ -1,4 +1,4 @@
-from spb.labels import Label
+from spb_label.labels import Label
 
 MOCK_LABEL_JSON = {
         "id": "0bf55703-af2b-451c-8c2f-b0503dfd1eeb",

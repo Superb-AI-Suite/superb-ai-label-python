@@ -2,10 +2,10 @@ import pytest
 import unittest
 import uuid
 
-from spb.core import Model
-from spb.core.models.types import ID, JsonObject, String, Int, Float, Boolean, List, PlainObject, PlainObjectList
-from spb.core.query import BaseQuery as Query
-from spb.exceptions import AttributeTypeException, QueryTypeException
+from spb_label.core import Model
+from spb_label.core.models.types import ID, JsonObject, String, Int, Float, Boolean, List, PlainObject, PlainObjectList
+from spb_label.core.query import BaseQuery as Query
+from spb_label.exceptions import AttributeTypeException, QueryTypeException
 
 class QueryTest(unittest.TestCase):
     def setUp(self):

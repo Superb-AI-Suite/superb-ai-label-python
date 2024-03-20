@@ -3,8 +3,8 @@ import os
 
 from unittest.mock import patch, Mock
 
-from spb.core.session import BaseSession as Session
-from spb.exceptions import AuthenticateFailedException, APILimitExceededException, SDKInitiationFailedException, APIException
+from spb_label.core.session import BaseSession as Session
+from spb_label.exceptions import AuthenticateFailedException, APILimitExceededException, SDKInitiationFailedException, APIException
 
 
 class SessionConfigurationTest(unittest.TestCase):
@@ -15,7 +15,7 @@ class SessionConfigurationTest(unittest.TestCase):
             'access_key': 'RIGHT_ACCESS_KEY'
         }
 
-    @patch('spb.core.session.os.path.exists', return_value=False)
+    @patch('spb_label.core.session.os.path.exists', return_value=False)
     def test_make_session_raises_exceptions_with_none_access_key(self, mock_file):
         team_name = 'RIGHT_TEAM_NAME'
 
@@ -29,7 +29,7 @@ class SessionConfigurationTest(unittest.TestCase):
                 'access_key': os.getenv('SPB_ACCESS_KEY', None)
             })
 
-    @patch('spb.core.session.os.path.exists', return_value=False)
+    @patch('spb_label.core.session.os.path.exists', return_value=False)
     def test_make_session_raises_exceptions_with_none_team_name(self, mock_file):
         access_key = 'RIGHT_ACCESS_KEY'
 
