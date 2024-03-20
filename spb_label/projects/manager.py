@@ -4,8 +4,12 @@ import os
 from typing import List, Optional
 
 from spb_label.core.manager import BaseManager
-from spb_label.exceptions import PreConditionException, ParameterException, APIFormatException, APIUnknownException
-from spb_label.libs.phy_credit.phy_credit.imageV2.project_info import ProjectInfo
+from spb_label.exceptions import (
+    PreConditionException,
+    ParameterException,
+    APIFormatException,
+    APIUnknownException,
+)
 from spb_label.utils.utils import requests_retry_session
 
 from .project import Project, PointcloudData, Tag
