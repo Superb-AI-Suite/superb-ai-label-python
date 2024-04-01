@@ -120,7 +120,6 @@ class Client(object):
         label_interface: dict,
         description: str = "",
         is_public: bool = False,
-        allow_advanced_qa: bool = False,
     ):
         manager = ProjectManager(
             self.credential["team_name"], self.credential["access_key"]
@@ -130,7 +129,6 @@ class Client(object):
             label_interface=label_interface,
             description=description,
             is_public=is_public,
-            allow_advanced_qa=allow_advanced_qa,
         )
         if project:
             self._project = project
@@ -143,7 +141,6 @@ class Client(object):
         label_interface: dict = None,
         description: str = None,
         is_public: bool = None,
-        allow_advanced_qa: bool = None,
     ):
         manager = ProjectManager(
             self.credential["team_name"], self.credential["access_key"]
@@ -158,7 +155,6 @@ class Client(object):
             label_interface=label_interface,
             description=description,
             is_public=is_public,
-            allow_advanced_qa=allow_advanced_qa,
         )
 
         if project:
