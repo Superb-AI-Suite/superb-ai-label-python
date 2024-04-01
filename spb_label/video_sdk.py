@@ -62,7 +62,7 @@ class VideoDataHandle(DataHandle):
     # Simple SDK functions
     ##############################
 
-    def download_image(self, download_to=None):
+    def download_image(self, download_to=None, print_log=False):
         raise NotSupportedException(
             "Does not support download label image."
         )
@@ -72,7 +72,7 @@ class VideoDataHandle(DataHandle):
             "Does not support describe label image."
         )
 
-    def download_video(self, download_to=None):
+    def download_video(self, download_to=None, print_log=False):
         self._describe_data_detail()
         if self._is_expired_url():
             return None
@@ -81,7 +81,8 @@ class VideoDataHandle(DataHandle):
 
         if download_to is None:
             download_to = self._data.data_key
-            print("[INFO] Downloaded to {}".format(download_to))
+            if print_log:
+                print("[INFO] Downloaded to {}".format(download_to))
 
         data_url = json.loads(self._data.data_url)
         for frame_idx, file_info in enumerate(data_url["file_infos"]):
