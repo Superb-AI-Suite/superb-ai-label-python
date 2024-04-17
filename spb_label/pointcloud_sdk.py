@@ -16,7 +16,6 @@ from spb_label.utils import (
 
 
 class PointcloudDataHandle (DataHandle):
-
     def get_image_url(self):
         raise NotSupportedException("")
 
@@ -30,9 +29,6 @@ class PointcloudDataHandle (DataHandle):
         raise NotSupportedException("Does not support describe label category.")
 
     def set_category_labels(self, labels: list = None, category: dict = None, properties=None):
-        raise NotSupportedException("Does not support update label result.")
-
-    def set_object_labels(self, labels):
         raise NotSupportedException("Does not support update label result.")
 
     def add_object_label(self, class_name, annotation, properties=None, id=None):
@@ -105,7 +101,7 @@ class PointcloudDataHandle (DataHandle):
                 )
         return True
     
-    def get_object_labels(self):
+    def get_object_labels_from_server(self):
         self._describe_data_detail()
         if self._is_expired_url():
             return None
@@ -140,6 +136,3 @@ class PointcloudDataHandle (DataHandle):
         self._data = manager.update_label(label=self._data)
         self.label_id_only = False
         return True
-
-    def update_info(self):
-        raise NotSupportedException("Does not support update info.")
