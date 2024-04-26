@@ -100,6 +100,17 @@ class LabelInfoBuildParams:
                 )
             elif self._workapp == WorkappType.POINTCLOUDS_SIESTA.value:
                 raise NotSupportedException("Does not support set_categories for pointclouds for now.")
+    
+    def get_object_builder(self):
+        if self._label_info is not None:
+            if self._workapp == WorkappType.IMAGE_SIESTA.value:
+                # return self._label_info.get_object_builder()
+                raise NotSupportedException("Does not support get_object_builder for image for now.")
+            elif self._workapp == WorkappType.VIDEO_SIESTA.value:
+                # return self._label_info.get_object_builder()
+                raise NotSupportedException("Does not support get_object_builder for video for now.")
+            elif self._workapp == WorkappType.POINTCLOUDS_SIESTA.value:
+                return self._label_info
 
     def build_info(self):
         if self._label_info is None:

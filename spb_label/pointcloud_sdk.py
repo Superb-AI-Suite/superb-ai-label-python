@@ -34,6 +34,9 @@ class PointcloudDataHandle (DataHandle):
     def add_object_label(self, class_name, annotation, properties=None, id=None):
         raise NotSupportedException("Does not support update label result.")
 
+    def get_object_builder(self):
+        return self._label_build_params.get_object_builder()
+
     def get_data_urls(self):
         self._describe_data_detail()
         if self._is_expired_url():
