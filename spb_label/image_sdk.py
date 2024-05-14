@@ -114,7 +114,7 @@ class DataHandle(object):
     # Simple SDK functions
     ##############################
 
-    def download_image(self, download_to="./"):
+    def download_image(self, download_to="./", print_log=False):
         self._describe_data_detail()
         if self._is_expired_url():
             return None, None
@@ -126,7 +126,8 @@ class DataHandle(object):
             download_to,
             path,
         )
-        print("[INFO] Downloaded to {}".format(full_path))
+        if print_log:
+            print("[INFO] Downloaded to {}".format(full_path))
         return retrieve_file(
             url=self._data.data_url,
             file_path=full_path
