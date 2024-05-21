@@ -2,41 +2,54 @@
   <a href="http://suite-api.superb-ai.com/" target="blank"><img src="logo/cool-tree.png" width="200" height="200" alt="Cool-Tree Logo" /></a>
 </p> -->
 
-# Superb AI Suite Software Development Kit
+# superb-ai-label
 
 ![Build](https://github.com/Superb-AI-Suite/spb-cli/workflows/Build/badge.svg)
 ![Version](https://img.shields.io/pypi/v/spb-cli)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 <!--![Unit Test](https://github.com/Superb-AI-Suite/cool-tree/workflows/Unit%20Test/badge.svg)-->
 
+- [Overview](#overview)
+- [Installation](#installation)
+- [Authentication](#authentication)
+- [Resource Description](#resource-description)
+  - [Projects](#projects)
+  - [Labels](#labels)
+- [Contributing](#contributing)
+- [License](#license)
 
-Official Superb AI Suite Software Development Kit for managing data and labels on [Superb AI Suite](https://suite.superb-ai.com).
+## Overview
 
-- [Installation](#Installation)
-- [Authentication](#Authentication)
-- [Resource Description](#Resource-Description)
-    - [Projects](#Projects)
-    - [Labels](#Labels)
-- [Contributing](#Contributing)
-- [License](#License)
+`superb-ai-label` is the Python client for interacting with [Superb Label](https://superb-ai.com/).
 
 ## Installation
 
 ```shell
-$ pip install spb-sdk
+$ pip install --upgrade superb-ai-label
 
-0.0.xx
-``` 
+0.1.0
+```
+
+### Requirements
+
+Python 3.7+
+
+## Documentation
+
+You can also find the documentation for `superb-ai-label` [on the website](https://docs.superb-ai.com/reference/super-ai-python-sdk-overview).
+
+- [Introduction](https://docs.superb-ai.com/reference/super-ai-python-sdk-overview)
+- [Tutorial](https://docs.superb-ai.com/reference/sdk-workflow-and-examples)
 
 ## Authentication
 
-You need an *Access Key* for authentication. The *Access Key* can be generated on the :tada: [Superb AI Suite web](https://suite.superb-ai.com/) (Suite > My Account > Advanced).
+You need an Access Key for authentication. The Access Key can be generated on the 🎉 Superb AI Platform web (Platform > Settings > Access).
 
-You can then configure your profile by entering your *Suite Team Name* and the generated *Access Key* to under configuration file.
+You can then configure your profile by entering your Platform Team Name and the generated Access Key.
 
-:rotating_light: ***Suite Team Name* refers to the organization name that your personal account belongs to:**
+🚨 Platform Team Name refers to the organization name that your personal account belongs to:
 
-<img src="./assets/account-name.png" width="400">
+<img src="./assets/login.png" width="400">
 
 ```shell
 $ cat <<EOF >> ~/.spb/config
@@ -68,7 +81,9 @@ count, users = client.get_project_users()
 # Get project tags
 count, tags = client.get_project_tags()
 ```
+
 ### Labels
+
 ```python
 from spb_label import sdk
 from spb_label.utils import SearchFilter
@@ -95,7 +110,7 @@ count, labels, next = client.get_labels(
 ## Contributing
 
 Feel free to report issues and suggest improvements.  
-Please email us at support@superb-ai.com
+Please email us at <support@superb-ai.com>
 
 ## License
 
