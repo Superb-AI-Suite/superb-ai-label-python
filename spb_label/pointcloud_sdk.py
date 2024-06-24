@@ -36,6 +36,10 @@ class PointcloudDataHandle (DataHandle):
 
     def get_object_builder(self):
         return self._label_build_params.get_object_builder()
+    
+    @deprecated("Use [update_tags].")
+    def update_data(self):
+        raise NotSupportedException("")
 
     def get_data_urls(self):
         self._describe_data_detail()
@@ -130,12 +134,4 @@ class PointcloudDataHandle (DataHandle):
         with open(download_to, 'w') as file:
             file.write(json.dumps(labels, indent=indent))
 
-    @deprecated("Use [update_tags].")
-    def update_data(self):
-        manager = LabelManager(
-            self.credential["team_name"], self.credential["access_key"]
-        )
 
-        self._data = manager.update_label(label=self._data)
-        self.label_id_only = False
-        return True
