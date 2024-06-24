@@ -46,7 +46,7 @@ setup(
     install_requires=[
         "requests",
         "semver",
-        "phy-credit==0.8.2",
+        "phy-credit==0.9.0",
         "configparser",
     ],
     zip_safe=False,

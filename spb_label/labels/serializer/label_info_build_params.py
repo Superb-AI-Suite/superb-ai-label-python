@@ -1,6 +1,7 @@
 from spb_label.exceptions import SDKException
 from phy_credit.imageV2 import build_label_info as image_build_label_info
 from phy_credit.video import build_label_info as video_build_label_info
+from phy_credit.pointclouds import build_label_info as pointcloud_build_label_info
 from spb_label.labels.label import WorkappType
 
 
@@ -21,6 +22,11 @@ class LabelInfoBuildParams:
                 )
             elif self._workapp == WorkappType.VIDEO_SIESTA.value:
                 self._label_info = video_build_label_info(
+                    label_interface=self._label_interface,
+                    result=self._result
+                )
+            elif self._workapp == WorkappType.POINTCLOUDS_SIESTA.value:
+                self._label_info = pointcloud_build_label_info(
                     label_interface=self._label_interface,
                     result=self._result
                 )
@@ -63,11 +69,20 @@ class LabelInfoBuildParams:
                     properties=kwargs.get("properties", None),
                     id=kwargs.get("id", None)
                 )
+            # this should get frames instead of annotations
             elif self._workapp == WorkappType.VIDEO_SIESTA.value:
                 self._label_info.add_object(
                     tracking_id=kwargs["tracking_id"],
                     class_name=kwargs["class_name"],
                     annotations=kwargs["annotations"],
+                    properties=kwargs.get("properties", None),
+                    id=kwargs.get("id", None)
+                )
+            elif self._workapp == WorkappType.POINTCLOUDS_SIESTA.value:
+                self._label_info.add_object(
+                    tracking_id=kwargs["tracking_id"],
+                    class_name=kwargs["class_name"],
+                    frames=kwargs.get("frames", []),
                     properties=kwargs.get("properties", None),
                     id=kwargs.get("id", None)
                 )
@@ -83,6 +98,19 @@ class LabelInfoBuildParams:
                     frames=kwargs.get("frames", None),
                     properties=kwargs.get("properties", None)
                 )
+            elif self._workapp == WorkappType.POINTCLOUDS_SIESTA.value:
+                raise NotSupportedException("Does not support set_categories for pointclouds for now.")
+    
+    def get_object_builder(self):
+        if self._label_info is not None:
+            if self._workapp == WorkappType.IMAGE_SIESTA.value:
+                # return self._label_info.get_object_builder()
+                raise NotSupportedException("Does not support get_object_builder for image for now.")
+            elif self._workapp == WorkappType.VIDEO_SIESTA.value:
+                # return self._label_info.get_object_builder()
+                raise NotSupportedException("Does not support get_object_builder for video for now.")
+            elif self._workapp == WorkappType.POINTCLOUDS_SIESTA.value:
+                return self._label_info
 
     def build_info(self):
         if self._label_info is None:
