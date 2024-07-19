@@ -2,7 +2,7 @@
   <a href="http://suite-api.superb-ai.com/" target="blank"><img src="logo/cool-tree.png" width="200" height="200" alt="Cool-Tree Logo" /></a>
 </p> -->
 
-# `superb-ai-label-python`
+# `superb-ai-label`
 
 [Build](https://github.com/Superb-AI-Suite/superb-ai-label/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/pypi/v/superb-ai-label)](https://pypi.org/project/superb-ai-label/)
