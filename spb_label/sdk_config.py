@@ -1,6 +1,6 @@
 SDK_NAME='superb-ai-label'
 SDK_AUTHOR='Superb AI Dev Team'
-SDK_VERSION='0.21.3'
+SDK_VERSION='0.22.0'
 SDK_AUTHOR_EMAIL='support@superb-ai.com'
 SDK_DESCRIPTION='Suite Standard Library'
 SDK_LICENSE='MIT'
