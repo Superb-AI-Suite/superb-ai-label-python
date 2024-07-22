@@ -320,7 +320,8 @@ class LabelManager(BaseManager):
 
         if label.workapp in [
             WorkappType.IMAGE_SIESTA.value,
-            WorkappType.VIDEO_SIESTA.value
+            WorkappType.VIDEO_SIESTA.value,
+            WorkappType.POINTCLOUDS_SIESTA.value
         ]:
             if info_build_params is not None:
                 label_info = info_build_params.build_info()
