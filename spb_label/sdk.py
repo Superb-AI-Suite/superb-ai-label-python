@@ -410,53 +410,27 @@ class Client(object):
             raise ParameterException(f"[ERROR] Project is not described.")
 
         workapp = self._project.workapp
+        manager = LabelManager(
+            self.credential["team_name"], self.credential["access_key"]
+        )
+        tags = [{"name": tag} for tag in tags]
+        option = {
+            "project_id": self._project.id,
+            "tags": tags,
+            "page": page_idx,
+            "page_size": page_size,
+            "dataset": dataset,
+            "data_key": data_key,
+            **kwargs,
+        }
+        _, data_page = manager.get_labels(**option)
         if workapp == "video-siesta":
-            # Video
-            command = spb_label.Command(type="describe_videolabel")
-            tags = [{"name": tag} for tag in tags]
-            option = {"project_id": self._project.id, "tags": tags, **kwargs}
-            # manager = VideoLabelManager(self.credential["team"], self.credential["access_key"])
-            # _, data_page = manager.get_labels(**option)
-            data_page, _ = spb_label.run(
-                command=command,
-                option=option,
-                page=page_idx,
-                page_size=page_size,
-            )
             for data in data_page:
                 yield VideoDataHandle(data, self._project, self.credential)
         elif workapp == "pointclouds-siesta":
-            manager = LabelManager(
-                self.credential["team_name"], self.credential["access_key"]
-            )
-            tags = [{"name": tag} for tag in tags]
-            option = {
-                "project_id": self._project.id,
-                "tags": tags,
-                "page": page_idx,
-                "page_size": page_size,
-                "dataset": dataset,
-                "data_key": data_key,
-                **kwargs,
-            }
-            _, data_page = manager.get_labels(**option)
             for data in data_page:
                 yield PointcloudDataHandle(data, self._project, self.credential)
         else:
-            manager = LabelManager(
-                self.credential["team_name"], self.credential["access_key"]
-            )
-            tags = [{"name": tag} for tag in tags]
-            option = {
-                "project_id": self._project.id,
-                "tags": tags,
-                "page": page_idx,
-                "page_size": page_size,
-                "dataset": dataset,
-                "data_key": data_key,
-                **kwargs,
-            }
-            _, data_page = manager.get_labels(**option)
             for data in data_page:
                 yield DataHandle(data, self._project, self.credential)
 
@@ -475,7 +449,9 @@ class Client(object):
         )
         label = manager.get_label(project_id=self._project.id, id=id)
         if label is not None:
-            if workapp == "pointclouds-siesta":
+            if workapp == "video-siesta":
+                return VideoDataHandle(label, self._project, self.credential)
+            elif workapp == "pointclouds-siesta":
                 return PointcloudDataHandle(label, self._project, self.credential)
             else:
                 return DataHandle(label, self._project, self.credential)
