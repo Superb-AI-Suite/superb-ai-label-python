@@ -9,12 +9,13 @@ verify_ssl = true
 name = "test"
 
 [dev-packages]
-pytest = "==6.2.4"
-pylint = "==2.8.2"
+pytest = "*"
+pylint = "*"
 setuptools = "*"
-requests-mock = "==1.9.2"
+requests-mock = "*"
 jupyter = "*"
 notebook = "*"
+markupsafe = "*"
 
 [packages]
 requests = "*"
@@ -23,4 +24,4 @@ phy-credit = "==0.9.0"
 configparser = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.10"
