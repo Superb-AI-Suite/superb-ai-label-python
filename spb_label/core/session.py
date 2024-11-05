@@ -174,15 +174,12 @@ class BaseSession:
             self.history.appendleft({"APIException": data})
             raise APIException(f"Network Connection Error: {repr(e)}")
         except Exception as e:
-            print(e)
             self.history.appendleft({"APIException": data})
-            print("sss")
             raise APIUnknownException(
                 "Unknown Error Exception: Check your API response"
             )
 
         result = response.json()
-        print(result)
 
         if isinstance(result, dict) and len(result.keys()) == 0:
             self.history.appendleft({"APIException": data})
