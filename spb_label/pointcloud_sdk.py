@@ -52,7 +52,7 @@ class PointcloudDataHandle (DataHandle):
         frames = data_urls.get("frame_infos", [])
         url = data_urls["base_url"]
         query = data_urls["query"]
-
+        
         result = {
             "manifest_url": f"{url}manifest.json?{query}",
             "manifest_original_file_name": data_urls["manifest_file"],
@@ -61,18 +61,20 @@ class PointcloudDataHandle (DataHandle):
 
         frame_path_prefix = "frames/frame_"
         for i, frame in enumerate(frames):
+            frame_ext = frame.get("frame_file_name", None).split(".")[-1].lower()
             index = str(i+1).zfill(8)
             frame_urls = {
-                "frame_url": f"{url}{frame_path_prefix}{index}/frame_{index}.pcd?{query}",
+                "frame_url": f"{url}{frame_path_prefix}{index}/frame_{index}.{frame_ext}?{query}",
                 "frame_original_file_name": frame.get("frame_file_name", None),
                 "images": []
             }
             images = frame.get("image_infos", [])
             for k, image in enumerate(images):
+                image_ext = image.get("image_file_name", None).split(".")[-1].lower()
                 image_index = str(k+1).zfill(8)
                 frame_urls["images"].append(
                     {
-                        "image_url": f"{url}{frame_path_prefix}{index}/image_{index}_{image_index}.png?{query}",
+                        "image_url": f"{url}{frame_path_prefix}{index}/image_{index}_{image_index}.{image_ext}?{query}",
                         "image_original_file_name": image.get("image_file_name", None)
                     }
                 )
