@@ -83,6 +83,7 @@ filter.assignee_is_any_one_of = ["ASSIGNEE EMAIL"]
 # Tag filter
 filter.tag_name_all = ["TAG NAME"]
 
+next = None
 count, labels, next = client.get_labels(
   filter=filter,
   cursor=next
